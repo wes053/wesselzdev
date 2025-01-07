@@ -15,5 +15,5 @@ app.get('/api/test', (req, res) => {
 
 // Start server
 app.listen(port, () => {
-    console.log(`Server is running on http://YOUR_SERVER_IP_OR_DOMAIN:${port}`);
+    console.log(`!Server is running on http://YOUR_SERVER_IP_OR_DOMAIN:${port}`);
 });
