@@ -1,21 +1,19 @@
+// server/server.js
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;  // Use a port provided by cPanel
 
-// Enable CORS for all routes
-app.use(cors());
+// Middleware
+app.use(cors());  // Allow requests from other domains (like your client on a different domain)
 
-// Parse JSON bodies (if needed)
-app.use(express.json());
-
-// API routes
-app.get('/api/hello', (req, res) => {
+// API route for testing
+app.get('/api/test', (req, res) => {
     res.json({ message: 'Hello from the server!' });
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+// Start server
+app.listen(port, () => {
+    console.log(`Server is running on http://YOUR_SERVER_IP_OR_DOMAIN:${port}`);
 });
